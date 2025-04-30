@@ -1,0 +1,51 @@
+:root {
+    --message-padding: 10px;
+    --message-radius: 25px;
+    --message-background-color: #303039;
+    --message-text-color: #c1c1c8;
+    --background-color: #010101;
+}
+
+.container {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    background-color: var(--background-color);
+}
+
+.messages {
+    flex-grow: 1;
+}
+
+.messages p {
+    font-family: sans-serif;
+    background-color: var(--message-background-color);
+    color: var(--message-text-color);
+    padding: var(--message-padding);
+    margin: 1px;
+    width: fit-content;
+}
+
+.messages p:nth-child(1) {
+    border-radius: var(--message-radius) var(--message-radius)
+        var(--message-radius) 0;
+}
+
+.messages p:nth-child(2) {
+    border-radius: 0 var(--message-radius) var(--message-radius) 0;
+}
+
+.messages p:nth-child(3) {
+    border-radius: 0 var(--message-radius) var(--message-radius) 0;
+}
+
+.avatar-container {
+    padding: 0 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.avatar-container img {
+    border-radius: 50%;
+}
