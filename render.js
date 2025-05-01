@@ -27,3 +27,11 @@ const draw = async () => {
     }
 
 }
+
+const switchTheme = (theme) => {
+    console.log("Switching theme", {theme});
+    document.getElementById("conversation").dataset.theme = theme    
+}
+document.querySelectorAll(".styles button").forEach(element => {
+    element.addEventListener("click", (event) => switchTheme(event.target.value))
+})

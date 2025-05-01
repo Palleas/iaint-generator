@@ -9,21 +9,35 @@
 </head>
 
 <body>
-    <div id="conversation" class="container">
-        <div class="avatar-container">
-            <img src="/image.png" width="40" height="40" alt="Avatar" />
+    <div class="container">
+        <div id="conversation" data-theme="default">
+            <div class="avatar-container">
+                <img src="/image.png" width="40" height="40" alt="Avatar" />
+            </div>
+
+            <div class="messages">
+                <p>I ain't
+                    <span id="editable-dingus" contenteditable="plaintext-only">reading</span> all that
+                </p>
+                <p>I'm happy for u tho</p>
+                <p>Or sorry that happened</p>
+            </div>
         </div>
 
-        <div class="messages">
-            <p>I ain't
-                <span id="editable-dingus" contenteditable="plaintext-only">reading</span> all that
-            </p>
-            <p>I'm happy for u tho</p>
-            <p>Or sorry that happened</p>
+        <section class="styles">
+            <h1>Select a style</h1>
+            <button aria-pressed="true" value="default">Default</button>
+            <button aria-pressed="false" value="redish">Redish</button>
+            <button aria-pressed="false" value="orange">Orange</button>
+        </section>
+
+        <div class="break"></div>
+
+        <div class="actions-row">
+            <button type="button" id="generate">Download</button>
         </div>
     </div>
 
-    <button type="button" id="generate">Generate</button>
 
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" type="text/javascript"></script>
     <script src="/render.js"></script>
