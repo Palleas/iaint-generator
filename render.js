@@ -1,15 +1,15 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write
 async function getBlobFromCanvas(canvas) {
     return new Promise((resolve, reject) => {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          resolve(blob);
-        } else {
-          reject(new Error("Canvas toBlob failed"));
-        }
-      });
+        canvas.toBlob((blob) => {
+            if (blob) {
+                resolve(blob);
+            } else {
+                reject(new Error("Canvas toBlob failed"));
+            }
+        });
     });
-  }
+}
 
 document.getElementById("download").addEventListener("click", () => {
     generateAndDownload();
@@ -56,10 +56,19 @@ const generateAndDownload = async () => {
 }
 
 const switchTheme = (theme) => {
-    console.log("Switching theme", {theme});
-    document.getElementById("conversation").dataset.theme = theme    
+    console.log("Switching theme", { theme });
+    document.getElementById("conversation").dataset.theme = theme
 }
 
 document.querySelectorAll(".styles button").forEach(element => {
-    element.addEventListener("click", (event) => switchTheme(event.target.value))
+    element.addEventListener("click", (event) => {
+        if (event.target["aria-pressed"] == "true") {
+            return;
+        }
+
+        document.querySelector(".styles button[aria-pressed=true]").setAttribute("aria-pressed", "false")
+        console.log("Target", { target: event.target })
+        event.target.setAttribute("aria-pressed", "true")
+        switchTheme(event.target.value)
+    })
 })

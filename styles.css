@@ -2,24 +2,52 @@
     --message-padding: 10px;
     --message-radius: 25px;
     --spacing: 8px;
+
+    --body-background-color: #f0dbb0;
+    --button-color: #4f6a8f;
+    --button-color-hover: #88a2bc;
+
+    /* Native font stack or whatever that means (stolen from https://getbootstrap.com/docs/5.3/content/reboot/#native-font-stack)*/
+    --font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 }
 
-:root, [data-theme="default"] {
+:root,
+[data-theme="default"] {
     --message-background-color: #303039;
     --message-text-color: #c1c1c8;
     --background-color: #010101;
 }
 
-[data-theme="redish"] {
-    --message-background-color: #a8216b;
-    --message-text-color: #c1c1c8;
-    --background-color: #010101;
+[data-theme="modern-dark"] {
+    --message-background-color: #1e88e5; /* blue */
+    --message-text-color: #ffffff; /* white */
+    --background-color: #121212; /* dark gray */
 }
 
-[data-theme="orange"] {
-    --message-background-color: #ff5349;
-    --message-text-color: #303039;
-    --background-color: #010101;
+[data-theme="muted-green"] {
+    --message-background-color: #a5d6a7; /* light green */
+    --message-text-color: #1b5e20; /* forest green */
+    --background-color: #e8f5e9; /* minty light green */
+}
+
+[data-theme="night-purple"] {
+    --message-background-color: #5e60ce; /* lavender-blue */
+    --message-text-color: #ffffff; /* white */
+    --background-color: #1a1b41; /* dark indigo */
+}
+
+[data-theme="sunset-fade"] {
+    --message-background-color: #ff8a65; /* warm orange */
+    --message-text-color: #263238; /* blue-gray */
+    --background-color: #ffe0b2; /* peach */
+}
+
+body {
+    background-color: var(--body-background-color);
+    font-family: var(--font-family);
 }
 
 .container {
@@ -28,6 +56,7 @@
 }
 
 #conversation {
+    border: 2px solid #000;
     width: 300px;
     border-radius: 10px;
     padding: 10px;
@@ -80,13 +109,29 @@
 .styles h1 {
     margin: 0;
 }
+
 .styles ul {
     padding: 0;
 }
 
-.styles li { 
+.styles li {
     list-style-type: none;
-    padding:0;
+    padding: 0;
+}
+
+.styles button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 0;
+    background-color: var(--button-color);
+    transition-timing-function: ease-in;
+    transition-property: background-color, color;
+    transition-duration: 0.2s;
+}
+
+.styles button:hover,
+.styles button[aria-pressed="true"] {
+    background-color: var(--button-color-hover);
 }
 
 .break {
