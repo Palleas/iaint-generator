@@ -9,36 +9,44 @@
 </head>
 
 <body>
+
     <div class="container">
-        <div id="conversation" data-theme="default">
-            <div class="avatar-container">
-                <img src="/image.png" width="40" height="40" alt="Avatar" />
+        <h1 class="main-title">I ain't reading all that</h1>
+        <div class="main-section">
+            <div id="conversation" data-theme="default">
+                <div class="avatar-container">
+                    <img src="/image.png" width="40" height="40" alt="Avatar" />
+                </div>
+
+                <div class="messages">
+                    <p>I ain't
+                        <span id="editable-dingus" contenteditable="plaintext-only">reading</span> all that
+                    </p>
+                    <p>I'm happy for u tho</p>
+                    <p>Or sorry that happened</p>
+                </div>
             </div>
 
-            <div class="messages">
-                <p>I ain't
-                    <span id="editable-dingus" contenteditable="plaintext-only">reading</span> all that
-                </p>
-                <p>I'm happy for u tho</p>
-                <p>Or sorry that happened</p>
-            </div>
+            <section class="styles">
+                <h1>Select a style</h1>
+                <button aria-pressed="true" value="default">Default</button>
+                <button aria-pressed="false" value="modern-dark">Modern Dark</button>
+                <button aria-pressed="false" value="muted-green">Muted Green</button>
+                <button aria-pressed="false" value="night-purple">Night Purple</button>
+                <button aria-pressed="false" value="sunset-fade">Sunset Fade</button>
+            </section>
         </div>
 
-        <section class="styles">
-            <h1>Select a style</h1>
-            <button aria-pressed="true" value="default">Default</button>
-            <button aria-pressed="false" value="modern-dark">Modern Dark</button>
-            <button aria-pressed="false" value="muted-green">Muted Green</button>
-            <button aria-pressed="false" value="night-purple">Night Purple</button>
-            <button aria-pressed="false" value="sunset-fade">Sunset Fade</button>
-        </section>
-
-        <div class="break"></div>
-
         <div class="actions-row">
-            <button type="button" id="download">Download</button>
+            <button type="button" id="download">
+                <img src="/images/download.svg" alt="Download" width="16" height="16">
+                Download
+            </button>
 
-            <button type="button" id="copy">Copy</button>
+            <button type="button" id="copy">
+                <img src="/images/copy.svg" alt="Copy" width="16" height="16">
+                Copy
+            </button>
         </div>
     </div>
 

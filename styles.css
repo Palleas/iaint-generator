@@ -50,9 +50,14 @@ body {
     font-family: var(--font-family);
 }
 
-.container {
+.main-section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+.main-title {
+    text-align: center;
+    flex-grow: 1;
 }
 
 #conversation {
@@ -140,5 +145,12 @@ body {
 }
 
 .actions-row {
+    padding: var(--spacing);
+    display: flex;
+    gap: calc(var(--spacing) * 2);
+    justify-content: center;
+}
+
+.actions-row button {
     padding: var(--spacing);
 }
