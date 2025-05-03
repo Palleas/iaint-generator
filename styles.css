@@ -215,3 +215,8 @@ body {
 input.visually-hidden:is(:focus, :focus-within) + label {
     outline: thin dotted;
 }
+
+footer {
+    margin-top: calc(var(--spacing) * 4);
+    text-align: center;
+}
