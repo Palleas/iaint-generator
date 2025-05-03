@@ -21,6 +21,7 @@
                             width="40"
                             height="40"
                             alt="Avatar"
+                            id="profile-picture"
                         />
                     </div>
 
@@ -40,20 +41,32 @@
                 </div>
 
                 <section class="styles">
-                    <h1>Select a style</h1>
-                    <button aria-pressed="true" value="default">Default</button>
-                    <button aria-pressed="false" value="modern-dark">
-                        Modern Dark
-                    </button>
-                    <button aria-pressed="false" value="muted-green">
-                        Muted Green
-                    </button>
-                    <button aria-pressed="false" value="night-purple">
-                        Night Purple
-                    </button>
-                    <button aria-pressed="false" value="sunset-fade">
-                        Sunset Fade
-                    </button>
+                    <input
+                        type="file"
+                        id="profile"
+                        accept="image/*"
+                        class="visually-hidden"
+                    />
+                    <!-- <button id="select-picture">Select profile picture</button> -->
+
+                    <div class="styles-buttongroup">
+                        <h1>Select a style</h1>
+                        <button aria-pressed="true" value="default">
+                            Default
+                        </button>
+                        <button aria-pressed="false" value="modern-dark">
+                            Modern Dark
+                        </button>
+                        <button aria-pressed="false" value="muted-green">
+                            Muted Green
+                        </button>
+                        <button aria-pressed="false" value="night-purple">
+                            Night Purple
+                        </button>
+                        <button aria-pressed="false" value="sunset-fade">
+                            Sunset Fade
+                        </button>
+                    </div>
                 </section>
             </div>
 

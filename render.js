@@ -65,7 +65,7 @@ const switchTheme = (theme) => {
     document.getElementById('conversation').dataset.theme = theme;
 };
 
-document.querySelectorAll('.styles button').forEach((element) => {
+document.querySelectorAll('.styles-buttongroup button').forEach((element) => {
     element.addEventListener('click', (event) => {
         if (event.target['aria-pressed'] == 'true') {
             return;
@@ -76,6 +76,50 @@ document.querySelectorAll('.styles button').forEach((element) => {
             .setAttribute('aria-pressed', 'false');
         console.log('Target', { target: event.target });
         event.target.setAttribute('aria-pressed', 'true');
-        switchTheme(event.target.value);
+
+        const theme = event.target.value;
+        localStorage.setItem('theme', theme);
+        switchTheme(theme);
     });
+});
+
+// Profile picture
+document.getElementById('profile-picture').addEventListener('click', () => {
+    document.getElementById('profile').click();
+});
+
+document.getElementById('profile').addEventListener('change', (event) => {
+    const files = event.target.files;
+    if (files && files.length && files.length > 0) {
+        // reader.onLoad = () =
+        const file = files[0];
+        const img = document.getElementById('profile-picture');
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            localStorage.setItem('saved-picture', e.target.result);
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const picture = localStorage.getItem('saved-picture');
+    if (picture !== null) {
+        document.getElementById('profile-picture').src = picture;
+    }
+
+    const theme = localStorage.getItem('theme');
+    if (theme !== null) {
+        document
+            .querySelector('.styles button[aria-pressed=true]')
+            .setAttribute('aria-pressed', 'false');
+
+        document
+            .querySelector(`.styles button[value=${theme}]`)
+            .setAttribute('aria-pressed', 'true');
+
+        switchTheme(theme);
+    }
 });
