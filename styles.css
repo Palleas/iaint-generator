@@ -8,38 +8,38 @@
     --button-color-hover: #88a2bc;
 
     /* Native font stack or whatever that means (stolen from https://getbootstrap.com/docs/5.3/content/reboot/#native-font-stack)*/
-    --font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-        "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    --font-family:
+        system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+        'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 :root,
-[data-theme="default"] {
+[data-theme='default'] {
     --message-background-color: #303039;
     --message-text-color: #c1c1c8;
     --background-color: #010101;
 }
 
-[data-theme="modern-dark"] {
+[data-theme='modern-dark'] {
     --message-background-color: #1e88e5; /* blue */
     --message-text-color: #ffffff; /* white */
     --background-color: #121212; /* dark gray */
 }
 
-[data-theme="muted-green"] {
+[data-theme='muted-green'] {
     --message-background-color: #a5d6a7; /* light green */
     --message-text-color: #1b5e20; /* forest green */
     --background-color: #e8f5e9; /* minty light green */
 }
 
-[data-theme="night-purple"] {
+[data-theme='night-purple'] {
     --message-background-color: #5e60ce; /* lavender-blue */
     --message-text-color: #ffffff; /* white */
     --background-color: #1a1b41; /* dark indigo */
 }
 
-[data-theme="sunset-fade"] {
+[data-theme='sunset-fade'] {
     --message-background-color: #ff8a65; /* warm orange */
     --message-text-color: #263238; /* blue-gray */
     --background-color: #ffe0b2; /* peach */
@@ -135,7 +135,7 @@ body {
 }
 
 .styles button:hover,
-.styles button[aria-pressed="true"] {
+.styles button[aria-pressed='true'] {
     background-color: var(--button-color-hover);
 }
 

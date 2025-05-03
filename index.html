@@ -1,58 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>I aint't reading all that</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I aint't reading all that</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+    <body>
+        <div class="container">
+            <h1 class="main-title">I ain't reading all that</h1>
+            <div class="main-section">
+                <div id="conversation" data-theme="default">
+                    <div class="avatar-container">
+                        <img
+                            src="/image.png"
+                            width="40"
+                            height="40"
+                            alt="Avatar"
+                        />
+                    </div>
 
-<body>
-
-    <div class="container">
-        <h1 class="main-title">I ain't reading all that</h1>
-        <div class="main-section">
-            <div id="conversation" data-theme="default">
-                <div class="avatar-container">
-                    <img src="/image.png" width="40" height="40" alt="Avatar" />
+                    <div class="messages">
+                        <p>
+                            I ain't
+                            <span
+                                id="editable-dingus"
+                                contenteditable="plaintext-only"
+                                >reading</span
+                            >
+                            all that
+                        </p>
+                        <p>I'm happy for u tho</p>
+                        <p>Or sorry that happened</p>
+                    </div>
                 </div>
 
-                <div class="messages">
-                    <p>I ain't
-                        <span id="editable-dingus" contenteditable="plaintext-only">reading</span> all that
-                    </p>
-                    <p>I'm happy for u tho</p>
-                    <p>Or sorry that happened</p>
-                </div>
+                <section class="styles">
+                    <h1>Select a style</h1>
+                    <button aria-pressed="true" value="default">Default</button>
+                    <button aria-pressed="false" value="modern-dark">
+                        Modern Dark
+                    </button>
+                    <button aria-pressed="false" value="muted-green">
+                        Muted Green
+                    </button>
+                    <button aria-pressed="false" value="night-purple">
+                        Night Purple
+                    </button>
+                    <button aria-pressed="false" value="sunset-fade">
+                        Sunset Fade
+                    </button>
+                </section>
             </div>
 
-            <section class="styles">
-                <h1>Select a style</h1>
-                <button aria-pressed="true" value="default">Default</button>
-                <button aria-pressed="false" value="modern-dark">Modern Dark</button>
-                <button aria-pressed="false" value="muted-green">Muted Green</button>
-                <button aria-pressed="false" value="night-purple">Night Purple</button>
-                <button aria-pressed="false" value="sunset-fade">Sunset Fade</button>
-            </section>
+            <div class="actions-row">
+                <button type="button" id="download">
+                    <img
+                        src="/images/download.svg"
+                        alt="Download"
+                        width="16"
+                        height="16"
+                    />
+                    Download
+                </button>
+
+                <button type="button" id="copy">
+                    <img
+                        src="/images/copy.svg"
+                        alt="Copy"
+                        width="16"
+                        height="16"
+                    />
+                    Copy
+                </button>
+            </div>
         </div>
 
-        <div class="actions-row">
-            <button type="button" id="download">
-                <img src="/images/download.svg" alt="Download" width="16" height="16">
-                Download
-            </button>
-
-            <button type="button" id="copy">
-                <img src="/images/copy.svg" alt="Copy" width="16" height="16">
-                Copy
-            </button>
-        </div>
-    </div>
-
-
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" type="text/javascript"></script>
-    <script src="/render.js"></script>
-</body>
-
+        <script
+            src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"
+            type="text/javascript"
+        ></script>
+        <script src="/render.js"></script>
+    </body>
 </html>
