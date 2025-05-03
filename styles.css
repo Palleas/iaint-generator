@@ -7,6 +7,11 @@
     --button-color: #4f6a8f;
     --button-color-hover: #88a2bc;
 
+    --text-color: #000;
+    --title-border-color: #000;
+
+    --action-color: #4f6a8f;
+
     /* Native font stack or whatever that means (stolen from https://getbootstrap.com/docs/5.3/content/reboot/#native-font-stack)*/
     --font-family:
         system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
@@ -55,13 +60,22 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.main-title .action {
+    color: var(--action-color);
+    display: inline-block;
+    animation: shakeAndRotate 1s;
+}
+
 .main-title {
     text-align: center;
-    flex-grow: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 calc(var(--spacing) * 4) calc(var(--spacing) * 4)
+        calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 4) 0;
 }
 
 #conversation {
-    border: 2px solid #000;
     width: 300px;
     border-radius: 10px;
     padding: 10px;
@@ -149,8 +163,35 @@ body {
     display: flex;
     gap: calc(var(--spacing) * 2);
     justify-content: center;
+    margin-top: calc(var(--spacing) * 2);
 }
 
 .actions-row button {
     padding: var(--spacing);
+}
+
+.actions-row button img {
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
+
+@keyframes shakeAndRotate {
+    0% {
+        transform: rotate(0deg) translateX(0) scale(1);
+    }
+    20% {
+        transform: rotate(5deg) translateX(-2px) scale(1.1);
+    }
+    40% {
+        transform: rotate(-5deg) translateX(2px) scale(0.95);
+    }
+    60% {
+        transform: rotate(4deg) translateX(-1px) scale(1.05);
+    }
+    80% {
+        transform: rotate(-4deg) translateX(1px) scale(0.98);
+    }
+    100% {
+        transform: rotate(0deg) translateX(0) scale(1);
+    }
 }
