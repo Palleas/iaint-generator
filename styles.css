@@ -59,6 +59,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .main-title .action {
@@ -128,6 +129,7 @@ body {
 }
 .styles h1 {
     margin: 0;
+    margin-bottom: var(--spacing);
 }
 
 .styles ul {
@@ -219,4 +221,9 @@ input.visually-hidden:is(:focus, :focus-within) + label {
 footer {
     margin-top: calc(var(--spacing) * 4);
     text-align: center;
+}
+
+.explaination {
+    margin-top: calc(var(--spacing) * 2);
+    font-size: 0.8em;
 }
