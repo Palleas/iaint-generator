@@ -79,9 +79,10 @@ body {
 }
 
 #conversation {
-    width: 100%;
-    border-radius: 10px;
+    /* width: 100%; */
     padding: 10px;
+
+    border-radius: 10px;
     display: flex;
     background-color: var(--background-color);
 }
@@ -236,10 +237,13 @@ button img {
 
 .conversation-container {
     width: 300px;
+    padding: 10px;
 }
 
 .help-profile-picture {
-    padding-left: 50px;
-    background: url(/images/arrow-90deg-up.svg) no-repeat 30px top;
+    margin-top: var(--spacing);
+    padding-left: 55px;
+    font-size: 0.8em;
+    background: url(/images/arrow-90deg-up.svg) no-repeat 32px top;
     display: inline-block;
 }
