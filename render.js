@@ -51,7 +51,7 @@ const generateAndDownload = async () => {
         const canvas = await getCanvasContent();
 
         const link = document.createElement('a');
-        link.download = 'html-image.png';
+        link.download = 'iaint.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
     } catch (error) {
