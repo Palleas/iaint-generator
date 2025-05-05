@@ -30,6 +30,13 @@ document
 
 document
     .getElementById('editable-dingus')
+    .addEventListener('focus', (event) => {
+        event.target.select();
+    })
+
+
+document
+    .getElementById('editable-dingus')
     .addEventListener('paste', (event) => {
         event.preventDefault();
     });

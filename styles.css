@@ -162,8 +162,23 @@ button {
     background-color: var(--button-color);
 }
 
-.styles-buttongroup {
+.styles-container {
     margin-top: calc(var(--spacing) * 2);
+}
+
+.styles-buttongroup {
+    display: flex;
+
+    row-gap: var(--spacing);
+    column-gap: var(--spacing);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+    .styles-buttongroup {
+        justify-content: center;
+    }
 }
 
 .actions-row {
@@ -176,11 +191,37 @@ button {
 
 .actions-row button {
     color: var(--button-text-color);
+    padding: calc(var(--spacing) * 2);
+}
+
+.actions-row button:hover img {
+    animation: rotate 1s infinite;
 }
 
 .actions-row button img {
     margin-right: 4px;
     vertical-align: text-bottom;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    60% {
+        transform: rotate(4deg);
+    }
+    80% {
+        transform: rotate(-4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes shakeAndRotate {
@@ -244,4 +285,11 @@ button img {
     font-size: 0.8em;
     background: url(/images/arrow-90deg-up.svg) no-repeat 32px top;
     display: inline-block;
+}
+
+@media (prefers-reduced-motion) {
+    .main-title .action,
+    .actions-row button:hover img {
+        animation: none;
+    }
 }
