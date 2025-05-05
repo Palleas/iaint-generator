@@ -11,7 +11,7 @@ async function getBlobFromCanvas(canvas) {
     });
 }
 
-document.getElementById('download').addEventListener('click', () => {
+document.getElementById('download').addEventListener('click', event => {
     generateAndDownload();
 });
 
@@ -42,8 +42,13 @@ document
     });
 
 const getCanvasContent = async () => {
+    const buttons = document.querySelectorAll(".actions-row button")
+    buttons.forEach(element => element.setAttribute("disabled", "disabled"))
     const container = document.getElementById('conversation');
-    return await html2canvas(container);
+    const result = await html2canvas(container);
+
+    buttons.forEach(element => element.removeAttribute("disabled"));
+    return result;
 };
 
 const generateAndCopy = async () => {

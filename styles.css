@@ -148,7 +148,10 @@ body {
     transition-duration: 0.2s;
 }
 
-button:hover,
+button:hover:disabled {
+    cursor: not-allowed;
+}
+button:hover:not(:disabled),
 .styles button[aria-pressed='true'] {
     background-color: var(--button-color-hover);
 }
