@@ -5,7 +5,9 @@
 
     --body-background-color: #f0dbb0;
     --button-color: #4f6a8f;
+    --button-text-color: #fff;
     --button-color-hover: #88a2bc;
+    --button-padding: 10px;
 
     --text-color: #000;
     --title-border-color: #000;
@@ -77,7 +79,7 @@ body {
 }
 
 #conversation {
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -143,26 +145,26 @@ body {
 
 .styles button {
     cursor: pointer;
-    padding: 5px;
-    border-radius: 0;
-    background-color: var(--button-color);
     transition-timing-function: ease-in;
     transition-property: background-color, color;
     transition-duration: 0.2s;
 }
 
-.styles button:hover,
+button:hover,
 .styles button[aria-pressed='true'] {
     background-color: var(--button-color-hover);
 }
 
-.styles-buttongroup {
-    margin-top: calc(var(--spacing) * 2);
+button {
+    color: var(--button-text-color);
+    border: none;
+    padding: var(--button-padding);
+    border-radius: 5px;
+    background-color: var(--button-color);
 }
 
-.break {
-    flex-basis: 100%;
-    height: 0;
+.styles-buttongroup {
+    margin-top: calc(var(--spacing) * 2);
 }
 
 .actions-row {
@@ -174,7 +176,7 @@ body {
 }
 
 .actions-row button {
-    padding: var(--spacing);
+    color: var(--button-text-color);
 }
 
 .actions-row button img {
@@ -226,4 +228,18 @@ footer {
 .explaination {
     margin-top: calc(var(--spacing) * 2);
     font-size: 0.8em;
+}
+
+button img {
+    fill: var(--button-text-color);
+}
+
+.conversation-container {
+    width: 300px;
+}
+
+.help-profile-picture {
+    padding-left: 50px;
+    background: url(/images/arrow-90deg-up.svg) no-repeat 30px top;
+    display: inline-block;
 }
