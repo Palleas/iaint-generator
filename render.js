@@ -59,17 +59,12 @@ const generateAndCopy = async () => {
 };
 
 const generateAndDownload = async () => {
-    try {
-        const canvas = await getCanvasContent();
+    const canvas = await getCanvasContent();
 
-        const link = document.createElement('a');
-        link.download = 'iaint.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-    } catch (error) {
-        console.error({ error });
-        alert('An error occured!');
-    }
+    const link = document.createElement('a');
+    link.download = 'iaint.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
 };
 
 const switchTheme = (theme) => {
