@@ -130,3 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         switchTheme(theme);
     }
 });
+
+document.querySelector(".bounce-once-hopefully").addEventListener("mouseleave", event => {
+    setTimeout(() => {
+        event.target.classList.remove("bounce-once-hopefully");
+    }, 1500);
+
+    event.target.removeEventListener("mouseleave", null);
+})
