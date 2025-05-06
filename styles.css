@@ -1,6 +1,7 @@
 :root {
-    --message-padding: 10px;
-    --message-radius: 25px;
+    --message-padding-y: 10px;
+    --message-padding-x: 15px;
+    --message-radius: 20px;
     --spacing: 8px;
 
     --body-background-color: #f0dbb0;
@@ -93,7 +94,7 @@ body {
     font-family: sans-serif;
     background-color: var(--message-background-color);
     color: var(--message-text-color);
-    padding: var(--message-padding);
+    padding: var(--message-padding-y) var(--message-padding-x);
     margin: 1px;
     width: fit-content;
     transition-timing-function: ease-in;
@@ -266,6 +267,11 @@ input.visually-hidden:is(:focus, :focus-within) + label {
 footer {
     margin-top: calc(var(--spacing) * 4);
     text-align: center;
+}
+
+footer p {
+    font-size: 0.8em;
+    margin: 2px;
 }
 
 .explaination {
