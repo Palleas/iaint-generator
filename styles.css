@@ -288,6 +288,16 @@ button img {
     padding: 10px;
 }
 
+.help-word {
+    font-size: 0.8em;
+    background: url(/images/arrow-down.svg) no-repeat center bottom;
+    display: inline-block;
+    padding-bottom: 20px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+
 .help-profile-picture {
     margin-top: var(--spacing);
     padding-left: 55px;
