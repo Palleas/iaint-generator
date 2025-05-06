@@ -45,7 +45,7 @@ const getCanvasContent = async () => {
     const buttons = document.querySelectorAll(".actions-row button")
     buttons.forEach(element => element.setAttribute("disabled", "disabled"))
     const container = document.getElementById('conversation');
-    const result = await html2canvas(container);
+    const result = await html2canvas(container, { backgroundColor: null });
 
     buttons.forEach(element => element.removeAttribute("disabled"));
     return result;
