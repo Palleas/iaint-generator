@@ -52,19 +52,30 @@ const getCanvasContent = async () => {
 };
 
 const generateAndCopy = async () => {
-    const canvas = await getCanvasContent();
-    const content = await getBlobFromCanvas(canvas);
-    const data = [new ClipboardItem({ [content.type]: content })];
-    await navigator.clipboard.write(data);
+    try {
+        const canvas = await getCanvasContent();
+        const content = await getBlobFromCanvas(canvas);
+        const data = [new ClipboardItem({ [content.type]: content })];
+        await navigator.clipboard.write(data);
+        alert("The image was copied into your clipboard!")
+    } catch (e) {
+        console.error(e)
+        alert("An error occured and we were unable to copy the image into your clipboard.")
+    }
 };
 
 const generateAndDownload = async () => {
-    const canvas = await getCanvasContent();
+    try {
+        const canvas = await getCanvasContent();
 
-    const link = document.createElement('a');
-    link.download = 'iaint.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
+        const link = document.createElement('a');
+        link.download = 'iaint.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    } catch (e) {
+        console.error(e)
+        alert("An error occured and we were unable to start the image's download.")
+    }
 };
 
 const switchTheme = (theme) => {
